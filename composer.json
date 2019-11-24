@@ -1,0 +1,25 @@
+{
+    "name": "ialopezg/ci_basemodel",
+    "description": "My ORM Base Model Pattern for CodeIgniter",
+    "keywords": ["codeigniter", "model", "basemodel", "my_model", "orm", "orm_model"],
+    "homepage": "https://github.com/ialopezg/CI_BaseModel",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Isidro A. Lopez G.",
+            "email": "isidro.lopezg@live.com"
+        }
+    ],
+  "support": {
+    "issues": "https://github.com/ialopezg/CI_BaseModel/issues",
+    "source": "https://github.com/ialopezg/CI_BaseModel"
+  },
+  "minimum-stability": "stable",
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "autoload": {
+        "classmap": ["src/"]
+    }
+}
