@@ -1,6 +1,6 @@
 ### Jetbrains
 # IntelliJ project files
-.idea
+/.idea/
 *.iml
 
 ### Composer
