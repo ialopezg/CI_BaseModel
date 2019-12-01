@@ -242,20 +242,18 @@ class BaseModel extends \CI_Model implements \ArrayAccess {
         }
 
         /* Table Name Guessing */
-        if (!$this->table) {
-            $this->fetchTableName();
-        }
+        $this->fetchTableName();
     }
 
     /**
      * Determine the table name for current model.
      */
     protected function fetchTableName() {
-        if (!isset($this->table)) {
+        if ((!isset($this->table) || empty($this->table)) && strtolower(get_called_class()) !== 'my_model') {
             $this->table = $this->_dbr->dbprefix($this->getTableName(get_called_class()));
             if (!$this->database->table_exists($this->table)) {
                 show_error(
-                    sprintf("While trying to figure out the table name, couldn't find an existing table named: <strong>%s</strong>.<br/>You can set the table name in your model by defining the protected variable <strong>" . $$his->table . '</strong>.', $this->table),
+                    sprintf("While trying to figure out the table name, couldn't find an existing table named: <strong>%s</strong>.<br/>You can set the table name in your model by defining the protected variable <strong>" . $this->table . '</strong>.', $this->table),
                     500, sprintf('Error trying to figure out table name for model "%s"', get_class($this))
                 );
             }
